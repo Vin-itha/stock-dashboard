@@ -1,0 +1,541 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+
+#login-screen h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#login-form input {
+    padding: 12px;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#login-form button {
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#login-form button:hover {
+    background: #1e7b34;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logout-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background: #b52a38;
+}
+
+.user-info h2 {
+    margin: 0 0 4px 0;
+}
+
+.live-indicator {
+    color: #00ff00;
+    animation: blink 1s infinite;
+}
+
+.wallet-info {
+    font-size: 1.1rem;
+}
+
+.wallet-info b {
+    color: #fff;
+}
+
+.portfolio-card {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1px solid #333;
+    margin-top: 10px;
+}
+
+.portfolio-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item .label {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.portfolio-item .value {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.stock-buttons {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.stock-buttons button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.stock-buttons button:hover {
+    background: #444;
+}
+
+.stock-buttons button.active {
+    background: #28a745;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stock-card {
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.stock-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.price-up {
+    color: #00ff00;
+}
+
+.price-down {
+    color: #ff4444;
+}
+
+.trade-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    background: #222;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.buy-btn,
+.sell-btn {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.buy-btn {
+    background-color: #28a745;
+}
+
+.sell-btn {
+    background-color: #dc3545;
+}
+
+/* Alert banner (for price alerts) */
+.alert-banner {
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    color: #b7ffcc;
+    font-size: 0.9rem;
+}
+
+/* Price chart section */
+.chart-section {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 14px 16px 18px;
+    border: 1px solid #333;
+    margin-top: 10px;
+}
+
+.chart-header {
+    margin-bottom: 10px;
+}
+
+.chart-header h3 {
+    margin: 0 0 4px 0;
+}
+
+.chart-header #chart-label {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #bbbbbb;
+}
+
+#price-chart {
+    width: 100%;
+    max-height: 260px;
+}
+/* Mini sparkline chart inside each stock card */
+.spark-container {
+    margin-top: 10px;
+}
+
+.spark-chart {
+    width: 100%;
+    height: 60px;
+}
+
+/* DASHBOARD LAYOUT: PROFILE + MAIN */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+}
+
+/* PROFILE CARD (LEFT SIDEBAR) */
+.profile-card {
+    background: #181818;
+    border-radius: 10px;
+    padding: 16px 14px 18px;
+    border: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 20%, #4ade80, #166534);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    font-size: 0.85rem;
+    color: #cbd5f5;
+    word-break: break-all;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-divider {
+    width: 100%;
+    height: 1px;
+    background: #272727;
+    margin: 10px 0 8px 0;
+}
+
+.profile-stat {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+}
+
+.profile-stat-label {
+    color: #9ca3af;
+}
+
+.profile-stat-value {
+    font-weight: 500;
+}
+
+/* MAIN AREA ON RIGHT */
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Small responsive tweak: stack on small screens */
+@media (max-width: 800px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .profile-card {
+        margin-bottom: 10px;
+    }
+}
+/* DASHBOARD PAGE: PROFILE LEFT, MAIN CARD RIGHT */
+#dashboard-screen.dashboard-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* left column */
+.profile-container {
+    width: 260px;
+}
+
+/* right column main card */
+.main-dashboard {
+    flex: 1;
+}
+
+/* PROFILE CARD STYLING */
+.profile-card {
+    background: #181818;
+    border-radius: 10px;
+    padding: 16px 14px 18px;
+    border: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 20%, #4ade80, #166534);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    font-size: 0.85rem;
+    color: #cbd5f5;
+    word-break: break-all;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-divider {
+    width: 100%;
+    height: 1px;
+    background: #272727;
+    margin: 10px 0 8px 0;
+}
+
+.profile-stat {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+}
+
+.profile-stat-label {
+    color: #9ca3af;
+}
+
+.profile-stat-value {
+    font-weight: 500;
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 900px) {
+    #dashboard-screen.dashboard-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-container {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .main-dashboard {
+        width: 100%;
+    }
+}
+
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+} 
+
+
+
+/* DASHBOARD PAGE: PROFILE LEFT, MAIN CARD RIGHT */
+#dashboard-screen.dashboard-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.profile-container {
+  width: 260px;
+}
+
+.main-dashboard {
+  flex: 1;
+}
+
+/* TRADE HISTORY PANEL */
+.trade-history {
+    margin-top: 25px;
+    background: #111;
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 14px 18px 18px;
+}
+
+.trade-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.trade-history-header h3 {
+    margin: 0;
+}
+
+#trade-empty-msg {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.trade-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.trade-table thead {
+    background: #1b1b1b;
+}
+
+.trade-table th,
+.trade-table td {
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+.trade-table tbody tr:hover {
+    background: #1b1b1b;
+}
+
+.trade-buy {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.trade-sell {
+    color: #f87171;
+    font-weight: 600;
+}
+
+
+/* profile card styles (same as before) ... */
