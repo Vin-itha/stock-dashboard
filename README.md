@@ -13,6 +13,7 @@ Before running the project, make sure you have installed:
 
 Project Folder Structure
 
+```text
 STOCK DASHBOARD/
 │
 ├── public/
@@ -25,6 +26,7 @@ STOCK DASHBOARD/
 ├── server.js             (Backend + WebSocket server)
 ├── package.json
 └── package-lock.json
+
 
 Technologies Used
 | Area                   | Tools                 |
