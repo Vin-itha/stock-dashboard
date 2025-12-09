@@ -1,7 +1,8 @@
 ```text
 Overview
 
-The Stock Broker Dashboard is a real-time trading simulator where users can log in, subscribe to stocks, monitor live price changes, buy/sell shares with virtual money, track trade history, and set price alerts.
+The Stock Broker Dashboard is a real-time trading simulator where users can log in, subscribe to stocks,
+monitor live price changes, buy/sell shares with virtual money, track trade history, and set price alerts.
 This project uses Node.js + Express + Socket.IO for live market updates and Chart.js for sparkline mini-charts.
 
 Requirements
