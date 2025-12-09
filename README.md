@@ -1,3 +1,4 @@
+```text
 Overview
 
 The Stock Broker Dashboard is a real-time trading simulator where users can log in, subscribe to stocks, monitor live price changes, buy/sell shares with virtual money, track trade history, and set price alerts.
@@ -13,7 +14,7 @@ Before running the project, make sure you have installed:
 
 Project Folder Structure
 
-```text
+
 STOCK DASHBOARD/
 │
 ├── public/
